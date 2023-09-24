@@ -1,5 +1,6 @@
 import streamlit as st
 from streamlit_modal import Modal
+import matplotlib.pyplot as plt
 
 st.set_page_config(page_title="testing webpage", page_icon=":tada:", layout="wide")
 
@@ -54,5 +55,14 @@ if but6:
 # Create some data
 data = [10, 20, 30]
 
-# Create a pie chart
-st.piechart(data)
+# Pie chart, where the slices will be ordered and plotted counter-clockwise:
+labels = 'Frogs', 'Hogs', 'Dogs', 'Logs'
+sizes = [15, 30, 45, 10]
+explode = (0, 0.1, 0, 0)  # only "explode" the 2nd slice (i.e. 'Hogs')
+
+fig1, ax1 = plt.subplots()
+ax1.pie(sizes, explode=explode, labels=labels, autopct='%1.1f%%',
+        shadow=True, startangle=90)
+ax1.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
+
+st.pyplot(fig1)
