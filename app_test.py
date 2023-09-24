@@ -39,61 +39,84 @@ time4 = 0
 time5 = 0
 time6 = 0
 
+name1 = "goal1"
+name2 = "goal2"
+name3 = "goal3"
+name4 = "goal4"
+name5 = "goal5"
+name6 = "goal6"
+
 # modal = Modal(key="popup_text",title="button text")
 
 if but1:
     with st.form(key = "Form 1"):
-        st.markup("Goal #1")
+        st.markdown("Goal #1")
         holder = 1
         name1 = st.text_input(":black[Enter a name for your goal :: ]")
         saved1 = st.number_input("Enter the amount of money saved for this goal :: ")
         # float
         time1 = st.number_input("Enter a timeframe for this goal in months :: ")
         # float
+        st.form_submit_button(label="Submit", help=None, on_click=None, args=None, kwargs=None, type="secondary", disabled=False, use_container_width=False)
 
 if but2:
     # with modal.container():
-    holder = 2
-    name2 = st.text_input(":black[Enter a name for your goal :: ]")
-    saved2 = st.number_input("Enter the amount of money saved for this goal :: ")
-    # float
-    time2 = st.number_input("Enter a timeframe for this goal in months :: ")
-    # float
+    with st.form(key = "Form 2"):
+        st.markdown("Goal #2")
+        holder = 2
+        name2 = st.text_input(":black[Enter a name for your goal :: ]")
+        saved2 = st.number_input("Enter the amount of money saved for this goal :: ")
+        # float
+        time2 = st.number_input("Enter a timeframe for this goal in months :: ")
+        # float
+        st.form_submit_button(label="Submit", help=None, on_click=None, args=None, kwargs=None, type="secondary", disabled=False, use_container_width=False)
 if but3:
-    holder = 3
-    name3 = st.text_input(":black[Enter a name for your goal :: ]")
-    saved3 = st.number_input("Enter the amount of money saved for this goal :: ")
-    # float
-    time3 = st.number_input("Enter a timeframe for this goal in months :: ")
-    # float
+    with st.form(key = "Form 3"):
+        st.markdown("Goal #3")
+        holder = 3
+        name3 = st.text_input(":black[Enter a name for your goal :: ]")
+        saved3 = st.number_input("Enter the amount of money saved for this goal :: ")
+        # float
+        time3 = st.number_input("Enter a timeframe for this goal in months :: ")
+        # float
+        st.form_submit_button(label="Submit", help=None, on_click=None, args=None, kwargs=None, type="secondary", disabled=False, use_container_width=False)
 if but4:
-    holder = 4
-    name4 = st.text_input(":black[Enter a name for your goal :: ]")
-    saved4 = st.number_input("Enter the amount of money saved for this goal :: ")
-    # float
-    time4 = st.number_input("Enter a timeframe for this goal in months :: ")
-    # float
+    with st.form(key = "Form 4"):
+        st.markdown("Goal #4")
+        holder = 4
+        name4 = st.text_input(":black[Enter a name for your goal :: ]")
+        saved4 = st.number_input("Enter the amount of money saved for this goal :: ")
+        # float
+        time4 = st.number_input("Enter a timeframe for this goal in months :: ")
+        # float
+        st.form_submit_button(label="Submit", help=None, on_click=None, args=None, kwargs=None, type="secondary", disabled=False, use_container_width=False)
 if but5:
-    holder = 5
-    name5 = st.text_input(":black[Enter a name for your goal :: ]")
-    saved5 = st.number_input("Enter the amount of money saved for this goal :: ")
-    # float
-    time5 = st.number_input("Enter a timeframe for this goal in months :: ")
-    # float
+    with st.form(key = "Form 5"):
+        st.markdown("Goal #5")
+        holder = 5
+        name5 = st.text_input(":black[Enter a name for your goal :: ]")
+        saved5 = st.number_input("Enter the amount of money saved for this goal :: ")
+        # float
+        time5 = st.number_input("Enter a timeframe for this goal in months :: ")
+        # float
+        st.form_submit_button(label="Submit", help=None, on_click=None, args=None, kwargs=None, type="secondary", disabled=False, use_container_width=False)
 if but6:
-    holder = 6
-    name6 = st.text_input(":black[Enter a name for your goal :: ]")
-    saved6 = st.number_input("Enter the amount of money saved for this goal :: ")
-    # float
-    time6 = st.number_input("Enter a timeframe for this goal in months :: ")
-    # float
+    with st.form(key = "Form 6"):
+        st.markdown("Goal #6")
+        holder = 6
+        name6 = st.text_input(":black[Enter a name for your goal :: ]")
+        saved6 = st.number_input("Enter the amount of money saved for this goal :: ")
+        # float
+        time6 = st.number_input("Enter a timeframe for this goal in months :: ")
+        # float
+        st.form_submit_button(label="Submit", help=None, on_click=None, args=None, kwargs=None, type="secondary", disabled=False, use_container_width=False)
 
 # Create some data
 sum = time1 + time2 + time3 + time4 + time5 + time6
 # data = [10, 20, 30]
 
 # Pie chart, where the slices will be ordered and plotted counter-clockwise:
-labels = 'goal1', 'goal2', 'goal3', 'goal4', 'goal5', 'goal6'
+labels = name1, name2, name3, name4, name5, name6
 sizes = [1,1,1,1,1,1]
 if sum != 0:
     sizes = [time1/sum, time2/sum, time3/sum, time4/sum, time5/sum, time6/sum]
