@@ -6,12 +6,10 @@ import sqlite3
 conn = sqlite3.connect('goal_data.db')
 c = conn.cursor()
 c.execute('''
-    CREATE TABLE IF NOT EXISTS transactions (
-        id INTEGER PRIMARY KEY AUTOINCREMENT,
+    CREATE TABLE IF NOT EXISTS goals (
         name TEXT,
-        transaction_type TEXT,
-        category TEXT,
-        amount REAL
+        saved REAL,
+        time REAL
     )
 ''')
 conn.commit()
@@ -63,67 +61,97 @@ name6 = "goal6"
 # modal = Modal(key="popup_text",title="button text")
 
 if but1:
-    with st.form(key = "Form 1"):
-        st.markdown("Goal #1")
-        holder = 1
-        name1 = st.text_input(":black[Enter a name for your goal :: ]")
-        saved1 = st.number_input("Enter the amount of money saved for this goal :: ")
-        # float
-        time1 = st.number_input("Enter a timeframe for this goal in months :: ")
-        # float
-        st.form_submit_button(label="Submit", help=None, on_click=None, args=None, kwargs=None, type="secondary", disabled=False, use_container_width=False)
+    st.markdown("Goal #1")
+    holder = 1
+    name1 = st.text_input(":black[Enter a name for your goal :: ]")
+    saved1 = st.number_input("Enter the amount of money saved for this goal :: ")
+    # float
+    time1 = st.number_input("Enter a timeframe for this goal in months :: ")
+    # float
+    submit = st.button("Submit this form.")
+    c.execute('''
+            INSERT INTO goals (name, saved, time)
+            VALUES (?, ?, ?)
+        ''', (name1, saved1, time1))
+    conn.commit()
 
 if but2:
     # with modal.container():
-    with st.form(key = "Form 2"):
-        st.markdown("Goal #2")
-        holder = 2
-        name2 = st.text_input(":black[Enter a name for your goal :: ]")
-        saved2 = st.number_input("Enter the amount of money saved for this goal :: ")
-        # float
-        time2 = st.number_input("Enter a timeframe for this goal in months :: ")
-        # float
-        st.form_submit_button(label="Submit", help=None, on_click=None, args=None, kwargs=None, type="secondary", disabled=False, use_container_width=False)
+    st.markdown("Goal #2")
+    holder = 2
+    name2 = st.text_input(":black[Enter a name for your goal :: ]")
+    saved2 = st.number_input("Enter the amount of money saved for this goal :: ")
+    # float
+    time2 = st.number_input("Enter a timeframe for this goal in months :: ")
+    # float
+    submit = st.button("Submit this form.")
+    c.execute('''
+        INSERT INTO goals (name, saved, time)
+        VALUES (?, ?, ?)
+    ''', (name2, saved2, time2))
+    conn.commit()
 if but3:
-    with st.form(key = "Form 3"):
-        st.markdown("Goal #3")
-        holder = 3
-        name3 = st.text_input(":black[Enter a name for your goal :: ]")
-        saved3 = st.number_input("Enter the amount of money saved for this goal :: ")
-        # float
-        time3 = st.number_input("Enter a timeframe for this goal in months :: ")
-        # float
-        st.form_submit_button(label="Submit", help=None, on_click=None, args=None, kwargs=None, type="secondary", disabled=False, use_container_width=False)
+    st.markdown("Goal #3")
+    holder = 3
+    name3 = st.text_input(":black[Enter a name for your goal :: ]")
+    saved3 = st.number_input("Enter the amount of money saved for this goal :: ")
+    # float
+    time3 = st.number_input("Enter a timeframe for this goal in months :: ")
+    # float
+    submit = st.button("Submit this form.")
+    c.execute('''
+        INSERT INTO goals (name, saved, time)
+        VALUES (?, ?, ?)
+    ''', (name3, saved3, time3))
+    conn.commit()
 if but4:
-    with st.form(key = "Form 4"):
-        st.markdown("Goal #4")
-        holder = 4
-        name4 = st.text_input(":black[Enter a name for your goal :: ]")
-        saved4 = st.number_input("Enter the amount of money saved for this goal :: ")
-        # float
-        time4 = st.number_input("Enter a timeframe for this goal in months :: ")
-        # float
-        st.form_submit_button(label="Submit", help=None, on_click=None, args=None, kwargs=None, type="secondary", disabled=False, use_container_width=False)
+    st.markdown("Goal #4")
+    holder = 4
+    name4 = st.text_input(":black[Enter a name for your goal :: ]")
+    saved4 = st.number_input("Enter the amount of money saved for this goal :: ")
+    # float
+    time4 = st.number_input("Enter a timeframe for this goal in months :: ")
+    # float
+    submit = st.button("Submit this form.")
+    c.execute('''
+        INSERT INTO goals (name, saved, time)
+        VALUES (?, ?, ?)
+    ''', (name4, saved4, time4))
+    conn.commit()
 if but5:
-    with st.form(key = "Form 5"):
-        st.markdown("Goal #5")
-        holder = 5
-        name5 = st.text_input(":black[Enter a name for your goal :: ]")
-        saved5 = st.number_input("Enter the amount of money saved for this goal :: ")
-        # float
-        time5 = st.number_input("Enter a timeframe for this goal in months :: ")
-        # float
-        st.form_submit_button(label="Submit", help=None, on_click=None, args=None, kwargs=None, type="secondary", disabled=False, use_container_width=False)
+    st.markdown("Goal #5")
+    holder = 5
+    name5 = st.text_input(":black[Enter a name for your goal :: ]")
+    saved5 = st.number_input("Enter the amount of money saved for this goal :: ")
+    # float
+    time5 = st.number_input("Enter a timeframe for this goal in months :: ")
+    # float
+    submit = st.button("Submit this form.")
+    c.execute('''
+        INSERT INTO goals (name, saved, time)
+        VALUES (?, ?, ?)
+    ''', (name5, saved5, time5))
+    conn.commit()
 if but6:
-    with st.form(key = "Form 6"):
-        st.markdown("Goal #6")
-        holder = 6
-        name6 = st.text_input(":black[Enter a name for your goal :: ]")
-        saved6 = st.number_input("Enter the amount of money saved for this goal :: ")
-        # float
-        time6 = st.number_input("Enter a timeframe for this goal in months :: ")
-        # float
-        st.form_submit_button(label="Submit", help=None, on_click=None, args=None, kwargs=None, type="secondary", disabled=False, use_container_width=False)
+    st.markdown("Goal #6")
+    holder = 6
+    name6 = st.text_input(":black[Enter a name for your goal :: ]")
+    saved6 = st.number_input("Enter the amount of money saved for this goal :: ")
+    # float
+    time6 = st.number_input("Enter a timeframe for this goal in months :: ")
+    # float
+    submit = st.button("Submit this form.")
+    c.execute('''
+        INSERT INTO goals (name, saved, time)
+        VALUES (?, ?, ?)
+    ''', (name6, saved6, time6))
+    conn.commit()
+
+c.execute('SELECT * FROM goals')
+goals = c.fetchall()
+
+
+conn.close()
 
 # Create some data
 sum = time1 + time2 + time3 + time4 + time5 + time6
