@@ -9,4 +9,7 @@ You save it, we plan-et! Galactic Savings is a financial app that helps users ke
 - Python library integration
 - Graph + data manipulation
 - Multi-page website
-
+***planning:***  
+Our original idea was to primarily use StreamLit, and in the end, we transferred over to using HTML, CSS, and JavaScript. This repository includes files from both implementations - both are incomplete due to time restrictions
+***Links:***
+- 
