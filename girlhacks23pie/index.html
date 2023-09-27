@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>replit</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <!DOCTYPE html>
+  <html>
+
+  <title>JavaScript Pie Chart</title>
+  <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-core.min.js"></script>
+  <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-pie.min.js"></script>
+
+  <div class="buttons" align="center">
+    <button id="but1" onclick="one()">Goal 1</button>​
+    <button id="but2" onclick="two()">Goal 2</button>​
+    <button id="but3" onclick="three()">Goal 3</button>​
+  </div>
+
+  <div class="buttons2" align="center">
+    <button id="but4" onclick="four()">Goal 4</button>​
+    <button id="but1" onclick="five()">Goal 5</button>​
+    <button id="but1" onclick="six()">Goal 6</button>​
+  </div>
+
+  <form><br>
+    Enter the name of the task: <input type="text" id="name" /><br><br>
+    Enter the amount you want to save: <input type="text" id="saved" /><br><br>
+    Enter the timeframe to complete the goal in months: <input type="text" id="saved" /><br><br>
+    <input id="sub" type="submit" value="Submit" onclick="formdata()" /><br>
+  </form>
+
+  <h3 id="main_txt"></h3>
+
+  <div id="container" style="width: 100%; height: 100%"> </div>
+
+  </html>
+
+  <script src="script.js"></script>
+
+  <!--
+  This script places a badge on your repl's full-browser view back to your repl's cover
+  page. Try various colors for the theme: dark, light, red, orange, yellow, lime, green,
+  teal, blue, blurple, magenta, pink!
+  -->
+  <script src="https://replit.com/public/js/replit-badge-v2.js" theme="dark" position="bottom-right"></script>
+</body>
+
+</html>
